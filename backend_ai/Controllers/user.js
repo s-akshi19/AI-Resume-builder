@@ -4,11 +4,25 @@ exports.register = async (req, res) => {
     try {
         const { name, email, photoUrl } = req.body;
         const userExist = await UserModel.findOne({ email: email });
-        {/* Please watch the video for ful source code */ }
+
+        if (userExist) {
+            return res.status(200).json({
+                message: "Welcome Back",
+                user: userExist
+            })
+        }
+
+        const newUser = new UserModel({
+            name: name,
+            email: email,
+            photoUrl: photoUrl
+        });
+
+        await newUser.save();
 
         return res.status(200).json({
-            message: "Welcome Back",
-            user: userExist
+            message: "Welcome",
+            user: newUser
         })
     } catch (err) {
         console.log(err)

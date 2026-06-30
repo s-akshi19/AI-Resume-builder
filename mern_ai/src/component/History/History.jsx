@@ -12,16 +12,20 @@ const History = () => {
 
   const { userInfo } = useContext(AuthContext);
 
-  useEffect(() => {
-
+ useEffect(() => {
     const fetchUserData = async () => {
-      setLoader(true)
-      {/* Please watch the video for ful source code */ }
-
+      try {
+        setLoader(true)
+        const response = await axios.get(`/api/resume/get/${userInfo?._id}`);
+        setData(response.data.data);
+        setLoader(false)
+      } catch (err) {
+        console.log(err);
+        setLoader(false)
+      }
     }
-
     fetchUserData()
-  }, [])
+  }, [userInfo])
 
   return (
     <div className={styles.History}>
