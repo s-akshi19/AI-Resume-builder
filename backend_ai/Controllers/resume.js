@@ -16,9 +16,7 @@ exports.addResume = async (req, res) => {
             return res.status(400).json({ error: "No resume file uploaded" });
         }
 
-        const pdfPath = req.file.path;
-        const dataBuffer = fs.readFileSync(pdfPath);
-        const pdfData = await pdfParse(dataBuffer);
+const pdfData = await pdfParse(req.file.buffer);
 
         const prompt = `
             You are a resume screening assistant.
@@ -58,8 +56,7 @@ let result = response.message.content.find(item => item.type === "text").text;
         });
 
         await newResume.save();
-        fs.unlinkSync(pdfPath);
-
+      
         res.status(200).json({ message: "Your analysis are ready", data: newResume });
     } catch (err) {
         console.log(err);
