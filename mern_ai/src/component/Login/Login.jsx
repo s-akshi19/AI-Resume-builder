@@ -3,7 +3,7 @@ import styles from './Login.module.css';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import GoogleIcon from '@mui/icons-material/Google';
 import { auth, provider } from '../../utils/firebase';
-import { signInWithPopup, signInWithRedirect, getRedirectResult } from 'firebase/auth';
+import { signInWithPopup } from 'firebase/auth';
 import { AuthContext } from '../../utils/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import axios from '../../utils/axios';
@@ -33,7 +33,6 @@ const Login = () => {
             console.log(err)
         }
     }
-authDomain: "mernai-b1525.firebaseapp.com",
 
     return (
         <div className={styles.Login}>
@@ -42,7 +41,9 @@ authDomain: "mernai-b1525.firebaseapp.com",
                     <h1>Login </h1>
                     <VpnKeyIcon />
                 </div>
-                <div className={styles.googleBtn} onClick={handleLogin}><GoogleIcon sx={{ fontSize: 20, color: "red" }} /> Sign in with Google</div>
+                <div className={styles.googleBtn} onClick={handleLogin}>
+                    <GoogleIcon sx={{ fontSize: 20, color: "red" }} /> Sign in with Google
+                </div>
             </div>
         </div>
     )
