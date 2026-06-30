@@ -3,13 +3,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAazTU3sUcUMuyLVqLOAWczOdXB8HIetq4",
-  authDomain: "ai-resume-builder-indol-xi.vercel.app",
-  projectId: "mernai-b1525",
-  storageBucket: "mernai-b1525.firebasestorage.app",
-  messagingSenderId: "235206334441",
-  appId: "1:235206334441:web:7116ca0325274d99c01d78",
-  measurementId: "G-W98V3XNVJX"
+  apiKey: "AIzaSyBcQTlTn3LPU3MWw6kb0wHyzSpJSrnHfDM",
+  authDomain: "ai-resume-sakshi.firebaseapp.com",
+  projectId: "ai-resume-sakshi",
+  storageBucket: "ai-resume-sakshi.firebasestorage.app",
+  messagingSenderId: "377262091145",
+  appId: "1:377262091145:web:2104a7313a315f90bdcf58",
+  measurementId: "G-WWHVWXWXEE"
 };
 
 const app = initializeApp(firebaseConfig);
