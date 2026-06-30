@@ -10,7 +10,7 @@ require('./conn');
 app.use(express.json());
 app.use(cors({
     credentials:true,
-    origin:"http://localhost:5173"
+    origin:["http://localhost:5173", "https://ai-resume-builder-indol-xi.vercel.app"]
 }))
 
 const UserRoutes = require('./Routes/user');
