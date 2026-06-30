@@ -2,6 +2,12 @@
 
 
 
+\## Live Demo
+
+🔗 \[View Live App](https://ai-resume-builder-e2mapp423-sakshi-projects2.vercel.app)
+
+
+
 A full-stack MERN application that uses AI to compare a candidate's resume against a job description and generates a match score along with detailed feedback. Built to help job seekers understand how well their resume aligns with a specific role before applying.
 
 
