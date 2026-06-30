@@ -4,7 +4,7 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAazTU3sUcUMuyLVqLOAWczOdXB8HIetq4",
-  authDomain: "mernai-b1525.firebaseapp.com",
+  authDomain: "ai-resume-builder-indol-xi.vercel.app",
   projectId: "mernai-b1525",
   storageBucket: "mernai-b1525.firebasestorage.app",
   messagingSenderId: "235206334441",
@@ -13,8 +13,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
-
 export { auth, provider };
